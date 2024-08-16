@@ -22,7 +22,7 @@ If you want to try building this project, here’s how:
 
 1. **Clone the repository**:
    ```
-   git clone https://github.com/yourusername/PiramidScene.git
+   git clone https://github.com/zan-super-zan/PiramidScene.git
    cd PiramidScene
    ```
 2. **Generate project files**
