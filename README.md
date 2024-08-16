@@ -25,15 +25,15 @@ If you want to try building this project, here’s how:
    git clone https://github.com/zan-super-zan/PiramidScene.git
    cd PiramidScene
    ```
-2. **Generate project files**
-You’ll need to run premake in cloned repo to generate the Visual Studio project files:
+2. **Generate project files**:
+    You’ll need to run premake in cloned repo to generate the Visual Studio project files:
     ```
     vendor\premake\bin\release\premake5.exe vs2022
     ```
 
 
-🙏 Just Learning
+## 🙏 Just Learning
 I’m just a beginner, learning as I go. If you see something that could be improved, or if you want to help out, feel free to fork this repo or suggest changes. Every bit of feedback helps!
 
-📝 License
+## 📝 License
 This project is open under the MIT License, so feel free to use it as you like.
