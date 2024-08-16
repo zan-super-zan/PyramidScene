@@ -1,0 +1,34 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln
+*.sln.docstates
+
+# IntelliSense files
+*.ipch
+*.opendb
+*.vcxproj.user
+*.vcxproj.filtersS
+*.vcxproj.idb
+*.tlog
+# Compiled source code
+*.class
+*.dll
+*.exe
+*.o
+*.so
+# IntelliJ IDEA
+*.idea
+*.iml
+*.iws
+
+*.log
+*.pid
+*.seed
+*.pid.lock
+x64/
+bin
+bin-int
+!vendor/premake/bin/release/*
