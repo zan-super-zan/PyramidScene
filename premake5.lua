@@ -1,4 +1,4 @@
-workspace "PiramidScene"
+workspace "PyramidScene"
     architecture "x64"
     configurations { "Debug", "Release" }
     location "."
@@ -6,7 +6,7 @@ workspace "PiramidScene"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 
-project "PiramidScene"
+project "PyramidScene"
     location "%{prj.name}"
     kind "ConsoleApp"
     language "C++"

@@ -4,30 +4,12 @@
 Application::Application()
 	: m_ApplyTexture(false), m_InterpolatedColor(false), m_Rotation(glm::vec3(0.0f)), m_PiramidObject(nullptr), m_LinearScale(false), m_LinearScaleValue(1.0f)
 {
-	m_Window = new Window(1.6f, Window::AspectRatio::RATIO16_10, "Piramid Scene");
-	m_Window->SetCallback(Callback::KEY_PRESS);
-	m_Window->SetCallback(Callback::FRAMEBUFFER_SIZE);
-	m_Window->SetCallback(Callback::CURSOR_POSITION);
-	m_Window->SetCallback(Callback::MOUSE_BUTTON);
-
-	m_Shader = ResourceManager::LoadShader("src/shaders/TextureShader.vert", "src/shaders/TextureShader.frag").Use();
-	
-	m_Camera = new PerspectiveCamera(60.0f, (float)m_Window->GetWidth() / (float)m_Window->GetHeight(), 0.1f, 100.0f);
-	m_Texture = new Texture2D();
-	*m_Texture = ResourceManager::LoadTexture("assets/RedWood.jpg");
-	m_Texture->SetFilter(GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
-
-	m_Renderer = new Renderer(m_Shader);
-
-	ImGuiLayer::Init(m_Window->GLFWwindowInstance());
-	m_Camera->ProcessInput(m_Window->GLFWwindowInstance(), 1.0f);
+	_Init();
 }
 
 
 void Application::Run()
 {
-	_Init();
-
 	float lastFrame = 0.0f;
 	float deltaTime = 0.0f;
 	while (!m_Window->ShouldClose())
@@ -47,6 +29,24 @@ void Application::Run()
 
 void Application::_Init()
 {
+	m_Window = new Window(1.6f, Window::AspectRatio::RATIO16_10, "Piramid Scene");
+	m_Window->SetCallback(Callback::KEY_PRESS);
+	m_Window->SetCallback(Callback::FRAMEBUFFER_SIZE);
+	m_Window->SetCallback(Callback::CURSOR_POSITION);
+	m_Window->SetCallback(Callback::MOUSE_BUTTON);
+
+	m_Shader = ResourceManager::LoadShader("src/shaders/TextureShader.vert", "src/shaders/TextureShader.frag").Use();
+
+	m_Camera = new PerspectiveCamera(60.0f, (float)m_Window->GetWidth() / (float)m_Window->GetHeight(), 0.1f, 100.0f);
+	m_Texture = new Texture2D();
+	*m_Texture = ResourceManager::LoadTexture("assets/RedWood.jpg");
+	m_Texture->SetFilter(GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
+
+	m_Renderer = new Renderer(m_Shader);
+
+	ImGuiLayer::Init(m_Window->GLFWwindowInstance());
+	m_Camera->ProcessInput(m_Window->GLFWwindowInstance(), 1.0f);
+
 	VertexArray piramidVertices(18);
 	// front face
 	piramidVertices[0] = Vertex({ -0.5f, -0.5f, 0.0f }, { 0.0f, 0.0f }, { 1.0f, 0.0f, 0.0f });
@@ -189,8 +189,8 @@ void Application::_ImGuiShowScalingSettings()
 	if (ImGui::CollapsingHeader("Scale Settings"))
 	{
 		static bool linearScale = true;
-		static constexpr float minScale = 0.0f;
-		static constexpr float maxScale = 3.0f;
+		static constexpr float minScale = 1.0f;
+		static constexpr float maxScale = 5.0f;
 
 		ImGui::Checkbox("Enable Linear Scale", &linearScale);
 		m_LinearScale = linearScale;
