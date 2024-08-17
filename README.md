@@ -1,6 +1,6 @@
-# 🏔️ PiramidScene
+# 🏔️ PyramidScene
 
-Hi there! 👋 This is **PiramidScene**, a small project I’m working on as I learn about 3D graphics. It's a basic 3D pyramid scene where you can scale, rotate, and change the colors of the pyramid. Nothing fancy, but it's been a fun way to get hands-on with **OpenGL**.
+Hi there! 👋 This is **PyramidScene**, a small project I’m working on as I learn about 3D graphics. It's a basic 3D pyramid scene where you can scale, rotate, and change the colors of the pyramid. Nothing fancy, but it's been a fun way to get hands-on with **OpenGL**.
 
 ## 🎨 What This Is
 - **3D Pyramid**: A simple pyramid rendered in OpenGL.
@@ -22,8 +22,8 @@ If you want to try building this project, here’s how:
 
 1. **Clone the repository**:
    ```
-   git clone https://github.com/zan-super-zan/PiramidScene.git
-   cd PiramidScene
+   git clone https://github.com/zan-super-zan/PyramidScene.git
+   cd PyramidScene
    ```
 2. **Generate project files**:
     You’ll need to run premake in cloned repo to generate the Visual Studio project files:
